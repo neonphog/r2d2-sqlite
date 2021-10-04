@@ -1,5 +1,5 @@
 [package]
-name = "r2d2_sqlite"
+name = "r2d2_sqlite_neonphog"
 version = "0.18.0"
 authors = ["Jovansonlee Cesar<ivanceras@gmail.com>"]
 license = "MIT"
@@ -20,11 +20,17 @@ path = "tests/test.rs"
 
 [dependencies]
 r2d2 = "0.8"
-rusqlite = "0.25"
+rusqlite = "0.26"
 
 [dev-dependencies]
 tempdir = "0.3"
 
 [dev-dependencies.rusqlite]
-version = "0.25"
+version = "0.26"
 features = ["trace"]
+
+[features]
+bundled = ["rusqlite/bundled"]
+bundled-sqlcipher = ["rusqlite/bundled-sqlcipher"]
+bundled-sqlcipher-vendored-openssl = ["rusqlite/bundled-sqlcipher-vendored-openssl"]
+sqlcipher = ["rusqlite/sqlcipher"]
